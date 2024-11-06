@@ -1,0 +1,21 @@
+Betrachten Sie die folgenden zwei Klassen:
+
+public class Test {
+    private int a = 23;
+    public void display() {
+        System.out.println(this.a);
+    }
+ }
+
+public class ExtendedTest extends Test {
+    private String a = "hello world";
+}
+
+Bei einer Instanz testEx der Klasse TestExtend und einer Instanz t der Klasse Test, was ist das
+Ergebnis von t.display() und testEx.display()?
+
+_________________________________________________
+
+Das Ergebnis von t.display() sowie von testEx.display() ist 23.
+Die Klasse ExtendedTest erbt die Methode display(), überschreibt diese aber nicht.
+Daher verwendet die Klasse ebenfalls die Methode aus Test, welche auf da a mit dem Wert 23 zugreift.
