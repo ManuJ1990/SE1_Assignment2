@@ -1,0 +1,30 @@
+Stellen Sie sich vor, Sie haben folgenden Code:
+
+try {
+    some_single_instruction_1
+    some_ single_instruction_2
+    some_ single_instruction_3
+}
+catch (Exception1 ex1) {
+}
+catch (Exception2 ex2) {
+}
+some_ single_instruction_4
+
+und nehmen Sie an, dass bei der Ausführung von some_single_instruction_2 eine
+Ausnahme ausgelöst wird. Wird some_single_instruction_3 jemals ausgeführt?
+Was passiert, wenn die Ausnahme nicht abgefangen wird?
+
+Wird some_single_instruction_4 ausgeführt, wenn die Ausnahme in einem der catch-Blöcke
+abgefangen wird?
+
+_________________________________________________
+
+some_single_instruction_3 wird nicht mehr ausgeführt.
+Der Code springt in den entsprechenden catch-Block, in dem die geworfene Ausnahme behandelt wird.
+
+Sollte die Ausnahme nicht abgefangen werden, übernimmt der System Exception Handler die Ausnahme und beendet das Programm.
+In diesem Fall wird some_single_instruction_4 nicht ausgeführt.
+
+Wird die Ausnahme hingegen erfolgreich abgefangen, wird some_single_instruction_4 danach ganz normal ausgeführt.
+Nach dem catch-Block setzt der Code unter dem try-catch-Block fort.
